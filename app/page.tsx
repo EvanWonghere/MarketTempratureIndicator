@@ -46,9 +46,22 @@ export default function Home() {
         </div>
       )}
 
-      {data?.isFallback && (
+      {data?.dataSource === "sina" && (
+        <div className="mb-6 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
+          数据来自新浪财经（东方财富不可用）。涨跌家数为根据上证/深证指数估算，成交额为真实两市汇总。
+          <button
+            type="button"
+            onClick={() => mutate()}
+            className="ml-2 underline"
+          >
+            重试
+          </button>
+        </div>
+      )}
+
+      {data?.dataSource === "static" && (
         <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
-          无法连接东方财富接口（可能因网络或地区限制），当前为示例数据，仅作展示。部署到 Vercel 或国内网络后通常可获取真实数据。
+          东方财富与新浪接口均不可用，当前为示例数据，仅作展示。
           <button
             type="button"
             onClick={() => mutate()}

@@ -38,6 +38,8 @@ export interface TemperatureResult {
   band: "low" | "mid" | "high";
   /** 为 true 时表示数据源不可用，当前为示例数据 */
   isFallback?: boolean;
+  /** 数据来源：eastmoney=东方财富，sina=新浪财经，static=静态示例 */
+  dataSource?: "eastmoney" | "sina" | "static";
 }
 
 /** 看板 API 返回 */
