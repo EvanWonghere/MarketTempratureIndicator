@@ -9,8 +9,7 @@ on:
   workflow_dispatch: # 支持手动触发
 
 permissions:
-  contents: read
-  contents: write  # 供脚本产出变更后 push 回本仓库
+  contents: write  # read + write，供脚本产出变更后 push 回本仓库
 
 jobs:
   calc:

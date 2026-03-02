@@ -14,8 +14,8 @@ export function ValuationGauge({
     return (
       <div className="flex flex-col items-center">
         <div className="relative w-56 h-32">
-          <div className="absolute inset-0 rounded-t-full border-2 border-border bg-surface-muted animate-pulse" style={{ borderBottom: "none" }} />
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-8 w-24 rounded bg-surface-muted animate-pulse" />
+          <div className="absolute inset-0 rounded-t-full border-2 border-gray-800 bg-surface-muted animate-pulse" style={{ borderBottom: "none" }} />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-8 w-24 rounded-sm bg-surface-muted animate-pulse" />
         </div>
         <div className="mt-4 h-10 w-20 rounded bg-surface-muted animate-pulse" />
       </div>
@@ -26,16 +26,17 @@ export function ValuationGauge({
     clamped <= 20 ? "冰点区" : clamped <= 40 ? "偏低估" : clamped <= 60 ? "估值合理" : clamped <= 80 ? "偏高估" : "沸点区";
   const bandColor =
     clamped <= 20 ? "text-cyan-400"
-      : clamped <= 40 ? "text-emerald-400"
+      : clamped <= 40 ? "text-terminal-up"
       : clamped <= 60 ? "text-zinc-400"
       : clamped <= 80 ? "text-amber-400"
-      : "text-rose-400";
+      : "text-terminal-down";
 
   // 上半圆弧：从左 (20,90) 到右 (180,90) 经 (100,10)，对应 0～100，全部落在 viewBox 内
   const arcPath = "M 20 90 A 80 80 0 1 1 180 90";
   const arcLength = Math.PI * 80;
   const filledLength = (clamped / 100) * arcLength;
-  const needleRotation = 180 * (1 - clamped / 100); // 0°=右(100)，180°=左(0)
+  // 指针默认指向上(12点)；弧上 0=左(180°)、100=右(0°)。需旋转 90°～270° 使指针对应刻度
+  const needleRotation = (clamped / 100) * 180 - 90;
 
   const r = 80;
   const cx = 100;
@@ -99,7 +100,7 @@ export function ValuationGauge({
         </svg>
       </div>
 
-      <div className="mt-2 text-center">
+      <div className="mt-2 text-center font-mono">
         <span className="text-4xl font-light tabular-nums text-zinc-100">
           {clamped.toFixed(1)}
           <span className="text-xl text-zinc-500 ml-0.5">°</span>

@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0d0d0f;
-  --bg-elevated: #161618;
-  --border: #2a2a2e;
+  --bg: #0a0a0a;
+  --bg-elevated: #141414;
+  --border: #262626;
   --text: #e4e4e7;
-  --text-muted: #71717a;
+  --text-muted: #525252;
+  --accent-up: #00ff00;
+  --accent-down: #ff003c;
   --accent-cold: #22d3ee;
   --accent-mid: #a3e635;
   --accent-hot: #fb923c;
@@ -15,10 +17,27 @@
 
 html {
   @apply antialiased;
+  overflow: hidden;
 }
 
 body {
-  @apply bg-surface text-zinc-200 min-h-screen;
+  @apply min-h-screen font-mono;
   background-color: var(--bg);
   color: var(--text);
+  overflow: hidden;
+}
+
+/* 终端内唯一滚动区：极细暗色滚动条 */
+.scrollbar-terminal::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-terminal::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+.scrollbar-terminal::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+.scrollbar-terminal::-webkit-scrollbar-thumb:hover {
+  background: #404040;
 }

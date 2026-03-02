@@ -72,7 +72,7 @@ async function fetchTencentBatch(codes: string[]): Promise<string> {
   return res.text();
 }
 
-/** 从全量行情文本统计：涨跌平家数、涨停跌停家数，totalCount = 实际有效条数 */
+/** 从全量行情文本统计：涨跌平家数、涨停跌停家数、涨跌幅数组，totalCount = 实际有效条数 */
 function aggregateFullQuotes(text: string): {
   upCount: number;
   downCount: number;
@@ -80,12 +80,14 @@ function aggregateFullQuotes(text: string): {
   limitUpCount: number;
   limitDownCount: number;
   totalCount: number;
+  changePcts: number[];
 } {
   let upCount = 0;
   let downCount = 0;
   let flatCount = 0;
   let limitUpCount = 0;
   let limitDownCount = 0;
+  const changePcts: number[] = [];
   const regex = /v_(?:sh|sz)\d+="[^"]+"/g;
   let m: RegExpExecArray | null;
   while ((m = regex.exec(text)) !== null) {
@@ -93,6 +95,7 @@ function aggregateFullQuotes(text: string): {
     if (!row) continue;
     const { changePct, price, limitUp, limitDown } = row;
     if (price <= 0) continue;
+    changePcts.push(Number(changePct));
     if (changePct > 0) upCount += 1;
     else if (changePct < 0) downCount += 1;
     else flatCount += 1;
@@ -107,7 +110,19 @@ function aggregateFullQuotes(text: string): {
     limitUpCount,
     limitDownCount,
     totalCount: totalCount || 1,
+    changePcts,
   };
+}
+
+/** 计算中位数，保留两位小数 */
+function median(sortedArr: number[]): number {
+  if (sortedArr.length === 0) return 0;
+  const mid = Math.floor(sortedArr.length / 2);
+  const v =
+    sortedArr.length % 2 === 1
+      ? sortedArr[mid]
+      : (sortedArr[mid - 1]! + sortedArr[mid]!) / 2;
+  return Math.round(v * 100) / 100;
 }
 
 async function fetchTencentAllQuotesStats(): Promise<{
@@ -117,6 +132,7 @@ async function fetchTencentAllQuotesStats(): Promise<{
   limitUpCount: number;
   limitDownCount: number;
   totalCount: number;
+  medianChange: number;
 }> {
   const allCodes = await getAshareCodes();
   const batches: string[][] = [];
@@ -134,6 +150,7 @@ async function fetchTencentAllQuotesStats(): Promise<{
   let flatCount = 0;
   let limitUpCount = 0;
   let limitDownCount = 0;
+  const allChangePcts: number[] = [];
   for (const text of results) {
     const s = aggregateFullQuotes(text);
     upCount += s.upCount;
@@ -141,8 +158,11 @@ async function fetchTencentAllQuotesStats(): Promise<{
     flatCount += s.flatCount;
     limitUpCount += s.limitUpCount;
     limitDownCount += s.limitDownCount;
+    allChangePcts.push(...s.changePcts);
   }
   const totalCount = upCount + downCount + flatCount;
+  allChangePcts.sort((a, b) => a - b);
+  const medianChange = median(allChangePcts);
   return {
     upCount,
     downCount,
@@ -150,16 +170,59 @@ async function fetchTencentAllQuotesStats(): Promise<{
     limitUpCount,
     limitDownCount,
     totalCount: totalCount || 1,
+    medianChange,
   };
 }
 
-// ============ 对外：统一看板快照（仅服务端调用，全部来自腾讯） ============
+// ============ 新浪：沪深300 / 中证1000 指数（大小盘撕裂度） ============
+const SINA_INDEX_URL = "http://hq.sinajs.cn/list=s_sh000300,s_sh000852";
+/** 新浪指数文本按逗号分割，第 4 个字段（索引 3）为当日涨跌幅% */
+const SINA_INDEX_CHANGE_IDX = 3;
 
-/** 拉取完整看板快照：腾讯指数成交额 + 腾讯全量个股行情，涨跌平与涨跌停均为实际统计，totalCount 为实际参与统计的股票数 */
+async function fetchSinaIndexDivergence(): Promise<{
+  hs300Change: number;
+  zz1000Change: number;
+  divergence: number;
+  isDivergent: boolean;
+}> {
+  try {
+    const res = await fetch(SINA_INDEX_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error(`sina index ${res.status}`);
+    const text = await res.text();
+    const lines = text.split("\n").filter((line) => line.includes("hq_str_"));
+    let hs300Change = 0;
+    let zz1000Change = 0;
+    for (const line of lines) {
+      const match = line.match(/="([^"]*)"/);
+      if (!match) continue;
+      const content = match[1];
+      const parts = content.split(",");
+      const changeVal = Number(parts[SINA_INDEX_CHANGE_IDX]);
+      if (Number.isNaN(changeVal)) continue;
+      if (line.includes("s_sh000300")) hs300Change = changeVal;
+      else if (line.includes("s_sh000852")) zz1000Change = changeVal;
+    }
+    const divergence = Math.round(Math.abs(hs300Change - zz1000Change) * 100) / 100;
+    const isDivergent = divergence >= 1.5;
+    return { hs300Change, zz1000Change, divergence, isDivergent };
+  } catch {
+    return {
+      hs300Change: 0,
+      zz1000Change: 0,
+      divergence: 0,
+      isDivergent: false,
+    };
+  }
+}
+
+// ============ 对外：统一看板快照（仅服务端调用，全部来自腾讯 + 新浪指数） ============
+
+/** 拉取完整看板快照：腾讯指数成交额 + 腾讯全量个股行情，涨跌平与涨跌停均为实际统计，totalCount 为实际参与统计的股票数；含全市场中位数与大小盘撕裂度 */
 export async function fetchMarketSnapshot(): Promise<MarketSnapshot> {
-  const [totalAmountWan, quoteStats] = await Promise.all([
+  const [totalAmountWan, quoteStats, divergence] = await Promise.all([
     fetchTotalAmountWanFromTencent(),
     fetchTencentAllQuotesStats(),
+    fetchSinaIndexDivergence(),
   ]);
   const totalAmount = wanToYuan(totalAmountWan);
   return {
@@ -171,6 +234,11 @@ export async function fetchMarketSnapshot(): Promise<MarketSnapshot> {
     totalAmount,
     totalCount: quoteStats.totalCount,
     timestamp: Date.now(),
+    medianChange: quoteStats.medianChange,
+    hs300Change: divergence.hs300Change,
+    zz1000Change: divergence.zz1000Change,
+    divergence: divergence.divergence,
+    isDivergent: divergence.isDivergent,
   };
 }
 

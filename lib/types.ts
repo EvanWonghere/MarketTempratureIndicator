@@ -16,6 +16,16 @@ export interface MarketSnapshot {
   totalCount: number;
   /** 数据时间戳（毫秒） */
   timestamp: number;
+  /** 全市场中位数涨跌幅（%）保留两位小数 */
+  medianChange?: number;
+  /** 沪深300 当日涨跌幅（%） */
+  hs300Change?: number;
+  /** 中证1000 当日涨跌幅（%） */
+  zz1000Change?: number;
+  /** 大小盘撕裂度绝对值 */
+  divergence?: number;
+  /** 是否极度分化（撕裂度 >= 1.5%） */
+  isDivergent?: boolean;
 }
 
 /** 温度计算组成项（短线情绪三维度） */
@@ -75,6 +85,10 @@ export interface ValuationHistoryPoint {
   pb: number;
   erp: number;
   bondYield10Y: number;
+  /** 沪深300 指数（可选，用于双轴混合图） */
+  hs300Price?: number;
+  /** 上证指数（可选，用于双轴混合图） */
+  shanghaiIndex?: number;
 }
 
 export interface ValuationData {

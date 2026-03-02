@@ -9,16 +9,21 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      gridTemplateColumns: {
+        "24": "repeat(24, minmax(0, 1fr))",
+      },
       colors: {
         surface: {
-          DEFAULT: "#0d0d0f",
-          elevated: "#161618",
-          muted: "#1c1c1f",
+          DEFAULT: "#0a0a0a",
+          elevated: "#141414",
+          muted: "#171717",
         },
         border: {
-          DEFAULT: "#2a2a2e",
-          muted: "#1f1f23",
+          DEFAULT: "#262626",
+          muted: "#1f1f1f",
         },
+        "terminal-up": "#00ff00",
+        "terminal-down": "#ff003c",
       },
     },
   },
