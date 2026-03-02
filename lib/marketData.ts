@@ -92,6 +92,7 @@ function aggregateFullQuotes(text: string): {
     const row = parseTencentFullQuoteLine(m[0]);
     if (!row) continue;
     const { changePct, price, limitUp, limitDown } = row;
+    if (price <= 0) continue;
     if (changePct > 0) upCount += 1;
     else if (changePct < 0) downCount += 1;
     else flatCount += 1;

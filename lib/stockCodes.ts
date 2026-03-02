@@ -59,19 +59,18 @@ async function fetchSinaNodeAll(node: string): Promise<string[]> {
   return all;
 }
 
-/** 新浪不可用（456 等）时用区间生成沪深代码，不含北交所；腾讯请求时无效代码会返回空，只统计有效条数 */
+/** 新浪不可用（456 等）时用区间生成沪深代码，不含北交所；区间不重叠，避免重复统计 */
 function generateFallbackCodes(): string[] {
   const codes: string[] = [];
   const shRanges: [number, number][] = [
-    [600000, 603999],
-    [601000, 601999],
+    [600000, 604999], // 沪市主板 600/601/603/604
     [605000, 605999],
-    [688000, 688999],
+    [688000, 688999], // 科创板
   ];
   const szRanges: [number, number][] = [
-    [1, 2999],
-    [3000, 4999],
-    [300000, 301999],
+    [1, 2999],       // 000001-002999
+    [3000, 4999],    // 003000-004999
+    [300000, 301999], // 创业板
   ];
   for (const [min, max] of shRanges) {
     for (let i = min; i <= max; i++) codes.push(`sh${String(i).padStart(6, "0")}`);
@@ -98,14 +97,14 @@ export async function getAshareCodes(): Promise<string[]> {
     ]);
     const list = [...sh, ...sz];
     if (list.length > 0) {
-      cachedCodes = list;
+      cachedCodes = Array.from(new Set(list));
       cacheTime = now;
       return cachedCodes;
     }
-  } catch (e) {
-    console.warn("sina list failed, using fallback codes", e);
+  } catch {
+    // 新浪 456/限流等时静默回退到区间生成列表，不向控制台抛错
   }
-  cachedCodes = generateFallbackCodes();
+  cachedCodes = Array.from(new Set(generateFallbackCodes()));
   cacheTime = now;
   return cachedCodes;
 }

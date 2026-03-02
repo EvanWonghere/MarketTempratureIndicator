@@ -1,0 +1,47 @@
+# 每日估值温度计 - 收盘后定时计算并提交 valuation.json
+# 北京时间 16:00 = UTC 08:00，仅工作日（周一至五）
+# 若 push 因权限失败：在仓库 Settings → Secrets 添加 PAT 为 REPO_TOKEN，下面对 checkout 使用 token: ${{ secrets.REPO_TOKEN }}
+name: Daily Valuation Temperature
+
+on:
+  schedule:
+    - cron: '0 8 * * 1-5'
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: read
+  contents: write  # 供脚本产出变更后 push 回本仓库
+
+jobs:
+  calc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Run valuation script
+        run: python scripts/calc_temperature.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/valuation.json
+          if git diff --staged --quiet; then
+            echo "No change in valuation.json, skip commit."
+          else
+            git commit -m "chore(data): update valuation temperature [automated]"
+            git push
+          fi

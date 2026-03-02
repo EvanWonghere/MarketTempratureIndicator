@@ -52,3 +52,34 @@ export interface DashboardData {
   /** 连板高度（若有，否则 null） */
   maxContinuousBoard: number | null;
 }
+
+// --------------- 估值温度计（每日定时 / valuation.json）---------------
+
+export interface ValuationSummary {
+  temperature: number;
+  pe: number;
+  pePercentile: number;
+  pb: number;
+  pbPercentile: number;
+  bondYield10Y: number;
+  erp: number;
+  erpPercentile: number;
+  tVal: number;
+  tErp: number;
+}
+
+export interface ValuationHistoryPoint {
+  date: string;
+  temperature: number;
+  pe: number;
+  pb: number;
+  erp: number;
+  bondYield10Y: number;
+}
+
+export interface ValuationData {
+  updatedAt: string;
+  indexName: string;
+  summary: ValuationSummary;
+  history: ValuationHistoryPoint[];
+}

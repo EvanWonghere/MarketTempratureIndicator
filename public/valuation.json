@@ -1,0 +1,258 @@
+{
+  "updatedAt": "2026-03-02T20:53:16.501378",
+  "indexName": "万得全A",
+  "summary": {
+    "temperature": 64.54,
+    "pe": 44.66,
+    "pePercentile": 80.09,
+    "pb": 3.32,
+    "pbPercentile": 79.41,
+    "bondYield10Y": 1.8288,
+    "erp": 0.4103,
+    "erpPercentile": 70.95,
+    "tVal": 79.75,
+    "tErp": 29.05
+  },
+  "history": [
+    {
+      "date": "2025-12-25",
+      "temperature": 56.76,
+      "pe": 40.77,
+      "pb": 3.02,
+      "erp": 0.6142,
+      "bondYield10Y": 1.8386
+    },
+    {
+      "date": "2025-12-29",
+      "temperature": 56.37,
+      "pe": 40.56,
+      "pb": 3.01,
+      "erp": 0.6071,
+      "bondYield10Y": 1.8584
+    },
+    {
+      "date": "2025-12-30",
+      "temperature": 56.19,
+      "pe": 40.59,
+      "pb": 3.0,
+      "erp": 0.6055,
+      "bondYield10Y": 1.8582
+    },
+    {
+      "date": "2026-01-05",
+      "temperature": 59.28,
+      "pe": 41.41,
+      "pb": 3.07,
+      "erp": 0.5565,
+      "bondYield10Y": 1.8584
+    },
+    {
+      "date": "2026-01-06",
+      "temperature": 60.42,
+      "pe": 41.68,
+      "pb": 3.1,
+      "erp": 0.5163,
+      "bondYield10Y": 1.8829
+    },
+    {
+      "date": "2026-01-07",
+      "temperature": 60.54,
+      "pe": 41.65,
+      "pb": 3.1,
+      "erp": 0.4991,
+      "bondYield10Y": 1.9019
+    },
+    {
+      "date": "2026-01-08",
+      "temperature": 60.88,
+      "pe": 41.85,
+      "pb": 3.13,
+      "erp": 0.499,
+      "bondYield10Y": 1.8905
+    },
+    {
+      "date": "2026-01-12",
+      "temperature": 62.46,
+      "pe": 42.85,
+      "pb": 3.25,
+      "erp": 0.4752,
+      "bondYield10Y": 1.8585
+    },
+    {
+      "date": "2026-01-13",
+      "temperature": 61.81,
+      "pe": 42.66,
+      "pb": 3.21,
+      "erp": 0.4922,
+      "bondYield10Y": 1.8519
+    },
+    {
+      "date": "2026-01-14",
+      "temperature": 62.4,
+      "pe": 43.04,
+      "pb": 3.23,
+      "erp": 0.474,
+      "bondYield10Y": 1.8494
+    },
+    {
+      "date": "2026-01-15",
+      "temperature": 62.19,
+      "pe": 42.84,
+      "pb": 3.23,
+      "erp": 0.4799,
+      "bondYield10Y": 1.8544
+    },
+    {
+      "date": "2026-01-19",
+      "temperature": 62.83,
+      "pe": 43.39,
+      "pb": 3.25,
+      "erp": 0.4654,
+      "bondYield10Y": 1.8393
+    },
+    {
+      "date": "2026-01-20",
+      "temperature": 62.38,
+      "pe": 43.27,
+      "pb": 3.23,
+      "erp": 0.4785,
+      "bondYield10Y": 1.8326
+    },
+    {
+      "date": "2026-01-21",
+      "temperature": 63.2,
+      "pe": 43.8,
+      "pb": 3.26,
+      "erp": 0.4519,
+      "bondYield10Y": 1.8312
+    },
+    {
+      "date": "2026-01-22",
+      "temperature": 63.68,
+      "pe": 43.83,
+      "pb": 3.28,
+      "erp": 0.439,
+      "bondYield10Y": 1.8425
+    },
+    {
+      "date": "2026-01-26",
+      "temperature": 63.83,
+      "pe": 44.17,
+      "pb": 3.29,
+      "erp": 0.4398,
+      "bondYield10Y": 1.8242
+    },
+    {
+      "date": "2026-01-27",
+      "temperature": 63.79,
+      "pe": 44.11,
+      "pb": 3.28,
+      "erp": 0.436,
+      "bondYield10Y": 1.8311
+    },
+    {
+      "date": "2026-01-28",
+      "temperature": 63.16,
+      "pe": 43.8,
+      "pb": 3.27,
+      "erp": 0.4667,
+      "bondYield10Y": 1.8164
+    },
+    {
+      "date": "2026-01-29",
+      "temperature": 62.35,
+      "pe": 43.49,
+      "pb": 3.23,
+      "erp": 0.482,
+      "bondYield10Y": 1.8174
+    },
+    {
+      "date": "2026-02-02",
+      "temperature": 60.79,
+      "pe": 42.47,
+      "pb": 3.15,
+      "erp": 0.5346,
+      "bondYield10Y": 1.82
+    },
+    {
+      "date": "2026-02-03",
+      "temperature": 62.11,
+      "pe": 43.2,
+      "pb": 3.23,
+      "erp": 0.4976,
+      "bondYield10Y": 1.8172
+    },
+    {
+      "date": "2026-02-04",
+      "temperature": 62.47,
+      "pe": 43.46,
+      "pb": 3.25,
+      "erp": 0.4817,
+      "bondYield10Y": 1.8193
+    },
+    {
+      "date": "2026-02-05",
+      "temperature": 61.78,
+      "pe": 43.12,
+      "pb": 3.21,
+      "erp": 0.5022,
+      "bondYield10Y": 1.8169
+    },
+    {
+      "date": "2026-02-09",
+      "temperature": 62.81,
+      "pe": 43.73,
+      "pb": 3.26,
+      "erp": 0.4754,
+      "bondYield10Y": 1.8114
+    },
+    {
+      "date": "2026-02-10",
+      "temperature": 62.59,
+      "pe": 43.64,
+      "pb": 3.26,
+      "erp": 0.4821,
+      "bondYield10Y": 1.8094
+    },
+    {
+      "date": "2026-02-11",
+      "temperature": 62.55,
+      "pe": 43.67,
+      "pb": 3.26,
+      "erp": 0.4905,
+      "bondYield10Y": 1.7994
+    },
+    {
+      "date": "2026-02-12",
+      "temperature": 62.45,
+      "pe": 43.72,
+      "pb": 3.26,
+      "erp": 0.498,
+      "bondYield10Y": 1.7893
+    },
+    {
+      "date": "2026-02-24",
+      "temperature": 63.06,
+      "pe": 43.95,
+      "pb": 3.27,
+      "erp": 0.473,
+      "bondYield10Y": 1.8023
+    },
+    {
+      "date": "2026-02-25",
+      "temperature": 63.86,
+      "pe": 44.31,
+      "pb": 3.31,
+      "erp": 0.441,
+      "bondYield10Y": 1.8158
+    },
+    {
+      "date": "2026-02-26",
+      "temperature": 64.54,
+      "pe": 44.66,
+      "pb": 3.32,
+      "erp": 0.4103,
+      "bondYield10Y": 1.8288
+    }
+  ]
+}

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "A股市场温度计",
-  description: "市场情绪与综合数据看板",
+  title: "A股估值温度计",
+  description: "每日定时长线估值温度计 · 历史分位与股债利差(ERP)",
 };
 
 export default function RootLayout({

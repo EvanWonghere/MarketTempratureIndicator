@@ -1,0 +1,3 @@
+# 估值温度计离线脚本依赖（GitHub Actions 与本地运行共用）
+pandas>=2.0.0
+akshare>=1.14.0
