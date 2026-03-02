@@ -109,7 +109,7 @@ function PageContent() {
   const zz1000Change = snapshot?.zz1000Change ?? 0;
 
   return (
-    <div className="h-screen w-full bg-[#0a0a0a] text-gray-300 font-mono overflow-hidden flex flex-col p-4">
+    <div className="min-h-screen lg:h-screen w-full bg-[#0a0a0a] text-gray-300 font-mono overflow-y-auto lg:overflow-hidden flex flex-col p-4">
       <header className="h-10 shrink-0 flex items-center justify-between text-xs text-zinc-400 border-b border-gray-800 px-1">
         <span>EVAN/TERMINAL</span>
         <div className="flex items-center gap-4">
@@ -187,7 +187,7 @@ function PageContent() {
                 compact
               />
             </div>
-            <div className="flex-1 min-h-0 flex flex-col border border-gray-800 rounded-sm p-3 bg-black">
+            <div className="min-h-[300px] lg:min-h-0 flex-1 flex flex-col border border-gray-800 rounded-sm p-3 bg-black">
               <h2 className="text-xs font-medium text-zinc-400 mb-2 shrink-0">近 30 日温度走势</h2>
               <div className="flex-1 min-h-0 w-full">
                 <TemperatureChart history={chartHistory} loading={isLoading} fillHeight />
@@ -199,9 +199,9 @@ function PageContent() {
           </div>
 
           {/* 右栏：实时快讯 8/24 */}
-          <div className="col-span-1 lg:col-span-8 flex flex-col h-full min-h-0 border border-gray-800 rounded-sm p-4">
+          <div className="col-span-1 lg:col-span-8 flex flex-col h-full min-h-[400px] lg:min-h-0 border border-gray-800 rounded-sm p-4">
             <h2 className="text-xs font-medium text-zinc-400 mb-2 shrink-0">HEADLINES · 7x24 A股快讯</h2>
-            <div className="flex-1 min-h-0 overflow-y-auto pr-2 scrollbar-terminal">
+            <div className="flex-1 min-h-[400px] lg:min-h-0 overflow-y-auto pr-2 scrollbar-terminal">
               <Headlines enablePolling={trading} />
             </div>
           </div>
