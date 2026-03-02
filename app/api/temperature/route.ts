@@ -1,5 +1,4 @@
-import { fetchMarketSnapshot, getFallbackSnapshot } from "@/lib/eastmoney";
-import { fetchSinaMarketSnapshot } from "@/lib/sina";
+import { fetchMarketSnapshotWithMeta, getFallbackSnapshot } from "@/lib/marketData";
 import { computeTemperature } from "@/lib/temperature";
 import { NextResponse } from "next/server";
 
@@ -8,26 +7,21 @@ export const revalidate = 0;
 
 export async function GET() {
   try {
-    const snapshot = await fetchMarketSnapshot();
+    const { snapshot, degraded } = await fetchMarketSnapshotWithMeta();
     const result = computeTemperature(snapshot);
-    return NextResponse.json({ ...result, dataSource: "eastmoney" });
+    return NextResponse.json({
+      ...result,
+      dataSource: "market",
+      ...(degraded && { isDegraded: true }),
+    });
   } catch (e) {
-    console.error("eastmoney failed", e);
-  }
-
-  try {
-    const snapshot = await fetchSinaMarketSnapshot();
+    console.error("market data failed", e);
+    const snapshot = getFallbackSnapshot();
     const result = computeTemperature(snapshot);
-    return NextResponse.json({ ...result, dataSource: "sina" });
-  } catch (e) {
-    console.error("sina failed", e);
+    return NextResponse.json({
+      ...result,
+      isFallback: true,
+      dataSource: "static",
+    });
   }
-
-  const snapshot = getFallbackSnapshot();
-  const result = computeTemperature(snapshot);
-  return NextResponse.json({
-    ...result,
-    isFallback: true,
-    dataSource: "static",
-  });
 }

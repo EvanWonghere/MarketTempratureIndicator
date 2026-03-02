@@ -1,4 +1,4 @@
-import { fetchMarketSnapshot } from "@/lib/eastmoney";
+import { fetchMarketSnapshot } from "@/lib/marketData";
 import type { DashboardData } from "@/lib/types";
 import { NextResponse } from "next/server";
 

@@ -68,12 +68,12 @@ export function Thermometer({ data, loading }: ThermometerProps) {
         <div className="mt-1 text-sm text-zinc-500">{getBandLabel(band)}</div>
       </div>
 
-      {/* 组成项简要（可选） */}
+      {/* 组成项：大盘广度 / 交投热度 / 极端情绪 */}
       {data?.components && (
         <div className="flex gap-4 text-xs text-zinc-500">
-          <span>情绪 {data.components.sentiment}</span>
-          <span>活跃 {data.components.activity}</span>
-          <span>估值 {data.components.valuation}</span>
+          <span>大盘广度 {data.components.sentiment}</span>
+          <span>交投热度 {data.components.activity}</span>
+          <span>极端情绪 {data.components.valuation}</span>
         </div>
       )}
     </div>

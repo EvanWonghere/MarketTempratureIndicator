@@ -18,13 +18,13 @@ export interface MarketSnapshot {
   timestamp: number;
 }
 
-/** 温度计算组成项（便于调试与展示） */
+/** 温度计算组成项（短线情绪三维度） */
 export interface TemperatureComponents {
-  /** 情绪分量 0-100 */
+  /** 大盘广度 0-100：上涨/(上涨+下跌) */
   sentiment: number;
-  /** 活跃度分量 0-100 */
+  /** 交投热度 0-100：成交额线性映射 */
   activity: number;
-  /** 估值分量 0-100（可选，无数据时为 50） */
+  /** 极端情绪 0-100：涨停/(涨停+跌停) */
   valuation: number;
 }
 
@@ -38,8 +38,10 @@ export interface TemperatureResult {
   band: "low" | "mid" | "high";
   /** 为 true 时表示数据源不可用，当前为示例数据 */
   isFallback?: boolean;
-  /** 数据来源：eastmoney=东方财富，sina=新浪财经，static=静态示例 */
-  dataSource?: "eastmoney" | "sina" | "static";
+  /** 数据来源：market=腾讯+网易，static=静态示例 */
+  dataSource?: "market" | "static";
+  /** 为 true 时表示仅使用腾讯成交额，涨跌/涨跌停为降级默认值 */
+  isDegraded?: boolean;
 }
 
 /** 看板 API 返回 */

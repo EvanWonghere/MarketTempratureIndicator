@@ -37,9 +37,11 @@ export function Dashboard({ data, loading }: DashboardProps) {
       <div className="text-xs text-zinc-600">共 {s.totalCount} 只 A 股参与统计</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
       <Card>
-        <div className="text-xs text-zinc-500 mb-1">上涨 / 下跌</div>
+        <div className="text-xs text-zinc-500 mb-1">上涨 / 平盘 / 下跌</div>
         <div className="text-lg font-medium text-zinc-100">
           <span className="text-emerald-400">{s.upCount}</span>
+          <span className="text-zinc-500 mx-1">/</span>
+          <span className="text-zinc-400">{s.flatCount}</span>
           <span className="text-zinc-500 mx-1">/</span>
           <span className="text-rose-400">{s.downCount}</span>
         </div>
