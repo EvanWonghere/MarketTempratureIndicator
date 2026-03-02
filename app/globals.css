@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0d0d0f;
+  --bg-elevated: #161618;
+  --border: #2a2a2e;
+  --text: #e4e4e7;
+  --text-muted: #71717a;
+  --accent-cold: #22d3ee;
+  --accent-mid: #a3e635;
+  --accent-hot: #fb923c;
+}
+
+html {
+  @apply antialiased;
+}
+
+body {
+  @apply bg-surface text-zinc-200 min-h-screen;
+  background-color: var(--bg);
+  color: var(--text);
+}
