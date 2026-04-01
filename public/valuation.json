@@ -1,30 +1,22 @@
 {
-  "updatedAt": "2026-03-31T08:48:00.550098",
+  "updatedAt": "2026-04-01T08:56:08.003039",
   "indexName": "万得全A",
   "summary": {
-    "temperature": 56.97,
-    "pe": 41.34,
-    "pePercentile": 75.92,
-    "pb": 2.98,
-    "pbPercentile": 70.16,
-    "bondYield10Y": 1.8063,
-    "erp": 0.6127,
-    "erpPercentile": 80.52,
-    "tVal": 73.04,
-    "tErp": 19.48
+    "temperature": 55.81,
+    "pe": 41.0,
+    "pePercentile": 74.61,
+    "pb": 2.95,
+    "pbPercentile": 68.48,
+    "bondYield10Y": 1.8171,
+    "erp": 0.6219,
+    "erpPercentile": 80.91,
+    "tVal": 71.55,
+    "tErp": 19.09
   },
   "history": [
     {
-      "date": "2026-02-02",
-      "temperature": 61.43,
-      "pe": 42.47,
-      "pb": 3.15,
-      "erp": 0.5346,
-      "bondYield10Y": 1.82
-    },
-    {
       "date": "2026-02-03",
-      "temperature": 62.95,
+      "temperature": 63.0,
       "pe": 43.2,
       "pb": 3.23,
       "erp": 0.4976,
@@ -32,7 +24,7 @@
     },
     {
       "date": "2026-02-04",
-      "temperature": 63.36,
+      "temperature": 63.41,
       "pe": 43.46,
       "pb": 3.25,
       "erp": 0.4817,
@@ -40,7 +32,7 @@
     },
     {
       "date": "2026-02-05",
-      "temperature": 62.59,
+      "temperature": 62.64,
       "pe": 43.12,
       "pb": 3.21,
       "erp": 0.5022,
@@ -48,7 +40,7 @@
     },
     {
       "date": "2026-02-09",
-      "temperature": 63.76,
+      "temperature": 63.8,
       "pe": 43.73,
       "pb": 3.26,
       "erp": 0.4754,
@@ -56,7 +48,7 @@
     },
     {
       "date": "2026-02-10",
-      "temperature": 63.5,
+      "temperature": 63.55,
       "pe": 43.64,
       "pb": 3.26,
       "erp": 0.4821,
@@ -64,7 +56,7 @@
     },
     {
       "date": "2026-02-11",
-      "temperature": 63.46,
+      "temperature": 63.51,
       "pe": 43.67,
       "pb": 3.26,
       "erp": 0.4905,
@@ -72,7 +64,7 @@
     },
     {
       "date": "2026-02-12",
-      "temperature": 63.36,
+      "temperature": 63.41,
       "pe": 43.72,
       "pb": 3.26,
       "erp": 0.498,
@@ -80,7 +72,7 @@
     },
     {
       "date": "2026-02-24",
-      "temperature": 64.05,
+      "temperature": 64.1,
       "pe": 43.95,
       "pb": 3.27,
       "erp": 0.473,
@@ -88,7 +80,7 @@
     },
     {
       "date": "2026-02-25",
-      "temperature": 64.92,
+      "temperature": 64.97,
       "pe": 44.31,
       "pb": 3.31,
       "erp": 0.441,
@@ -96,7 +88,7 @@
     },
     {
       "date": "2026-02-26",
-      "temperature": 65.62,
+      "temperature": 65.66,
       "pe": 44.66,
       "pb": 3.32,
       "erp": 0.4103,
@@ -104,7 +96,7 @@
     },
     {
       "date": "2026-03-02",
-      "temperature": 64.03,
+      "temperature": 64.08,
       "pe": 44.41,
       "pb": 3.26,
       "erp": 0.4756,
@@ -112,7 +104,7 @@
     },
     {
       "date": "2026-03-03",
-      "temperature": 61.2,
+      "temperature": 61.25,
       "pe": 42.84,
       "pb": 3.13,
       "erp": 0.5536,
@@ -120,7 +112,7 @@
     },
     {
       "date": "2026-03-04",
-      "temperature": 60.79,
+      "temperature": 60.84,
       "pe": 42.51,
       "pb": 3.13,
       "erp": 0.5756,
@@ -128,7 +120,7 @@
     },
     {
       "date": "2026-03-05",
-      "temperature": 61.61,
+      "temperature": 61.65,
       "pe": 43.05,
       "pb": 3.17,
       "erp": 0.545,
@@ -136,7 +128,7 @@
     },
     {
       "date": "2026-03-09",
-      "temperature": 62.62,
+      "temperature": 62.66,
       "pe": 43.38,
       "pb": 3.2,
       "erp": 0.4998,
@@ -144,7 +136,7 @@
     },
     {
       "date": "2026-03-10",
-      "temperature": 64.31,
+      "temperature": 64.36,
       "pe": 44.22,
       "pb": 3.26,
       "erp": 0.4559,
@@ -152,7 +144,7 @@
     },
     {
       "date": "2026-03-11",
-      "temperature": 64.02,
+      "temperature": 64.07,
       "pe": 44.08,
       "pb": 3.25,
       "erp": 0.4611,
@@ -160,7 +152,7 @@
     },
     {
       "date": "2026-03-12",
-      "temperature": 63.22,
+      "temperature": 63.27,
       "pe": 43.76,
       "pb": 3.22,
       "erp": 0.48,
@@ -168,7 +160,7 @@
     },
     {
       "date": "2026-03-16",
-      "temperature": 63.07,
+      "temperature": 63.12,
       "pe": 43.39,
       "pb": 3.19,
       "erp": 0.4735,
@@ -176,7 +168,7 @@
     },
     {
       "date": "2026-03-17",
-      "temperature": 61.47,
+      "temperature": 61.52,
       "pe": 42.46,
       "pb": 3.12,
       "erp": 0.5238,
@@ -184,7 +176,7 @@
     },
     {
       "date": "2026-03-18",
-      "temperature": 62.1,
+      "temperature": 62.15,
       "pe": 42.95,
       "pb": 3.17,
       "erp": 0.5108,
@@ -192,7 +184,7 @@
     },
     {
       "date": "2026-03-19",
-      "temperature": 60.66,
+      "temperature": 60.71,
       "pe": 42.04,
       "pb": 3.08,
       "erp": 0.5535,
@@ -200,7 +192,7 @@
     },
     {
       "date": "2026-03-20",
-      "temperature": 57.5,
+      "temperature": 57.55,
       "pe": 41.16,
       "pb": 3.0,
       "erp": 0.5996,
@@ -216,7 +208,7 @@
     },
     {
       "date": "2026-03-24",
-      "temperature": 54.3,
+      "temperature": 54.31,
       "pe": 40.3,
       "pb": 2.95,
       "erp": 0.6542,
@@ -224,7 +216,7 @@
     },
     {
       "date": "2026-03-25",
-      "temperature": 57.19,
+      "temperature": 57.23,
       "pe": 41.13,
       "pb": 3.0,
       "erp": 0.608,
@@ -240,7 +232,7 @@
     },
     {
       "date": "2026-03-27",
-      "temperature": 56.83,
+      "temperature": 56.88,
       "pe": 41.22,
       "pb": 2.98,
       "erp": 0.6088,
@@ -248,11 +240,19 @@
     },
     {
       "date": "2026-03-30",
-      "temperature": 56.97,
+      "temperature": 57.02,
       "pe": 41.34,
       "pb": 2.98,
       "erp": 0.6127,
       "bondYield10Y": 1.8063
+    },
+    {
+      "date": "2026-03-31",
+      "temperature": 55.81,
+      "pe": 41.0,
+      "pb": 2.95,
+      "erp": 0.6219,
+      "bondYield10Y": 1.8171
     }
   ]
 }
