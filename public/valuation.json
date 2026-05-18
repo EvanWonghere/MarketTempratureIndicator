@@ -1,27 +1,19 @@
 {
-  "updatedAt": "2026-05-15T10:14:28.141359",
+  "updatedAt": "2026-05-18T11:38:41.804106",
   "indexName": "万得全A",
   "summary": {
-    "temperature": 64.64,
-    "pe": 44.77,
-    "pePercentile": 82.51,
-    "pb": 3.18,
-    "pbPercentile": 78.54,
-    "bondYield10Y": 1.7588,
-    "erp": 0.4748,
-    "erpPercentile": 72.43,
-    "tVal": 80.52,
-    "tErp": 27.57
+    "temperature": 64.35,
+    "pe": 44.6,
+    "pePercentile": 82.27,
+    "pb": 3.16,
+    "pbPercentile": 78.08,
+    "bondYield10Y": 1.7658,
+    "erp": 0.4764,
+    "erpPercentile": 72.58,
+    "tVal": 80.17,
+    "tErp": 27.42
   },
   "history": [
-    {
-      "date": "2026-03-30",
-      "temperature": 57.15,
-      "pe": 41.34,
-      "pb": 2.98,
-      "erp": 0.6127,
-      "bondYield10Y": 1.8063
-    },
     {
       "date": "2026-03-31",
       "temperature": 55.92,
@@ -208,7 +200,7 @@
     },
     {
       "date": "2026-05-07",
-      "temperature": 65.13,
+      "temperature": 65.18,
       "pe": 45.0,
       "pb": 3.19,
       "erp": 0.4591,
@@ -216,7 +208,7 @@
     },
     {
       "date": "2026-05-08",
-      "temperature": 65.5,
+      "temperature": 65.54,
       "pe": 45.07,
       "pb": 3.21,
       "erp": 0.454,
@@ -224,7 +216,7 @@
     },
     {
       "date": "2026-05-11",
-      "temperature": 66.42,
+      "temperature": 66.47,
       "pe": 45.43,
       "pb": 3.24,
       "erp": 0.439,
@@ -232,7 +224,7 @@
     },
     {
       "date": "2026-05-12",
-      "temperature": 65.32,
+      "temperature": 65.37,
       "pe": 45.08,
       "pb": 3.2,
       "erp": 0.4591,
@@ -240,7 +232,7 @@
     },
     {
       "date": "2026-05-13",
-      "temperature": 66.59,
+      "temperature": 66.64,
       "pe": 45.75,
       "pb": 3.23,
       "erp": 0.4344,
@@ -248,11 +240,19 @@
     },
     {
       "date": "2026-05-14",
-      "temperature": 64.64,
+      "temperature": 64.69,
       "pe": 44.77,
       "pb": 3.18,
       "erp": 0.4748,
       "bondYield10Y": 1.7588
+    },
+    {
+      "date": "2026-05-15",
+      "temperature": 64.35,
+      "pe": 44.6,
+      "pb": 3.16,
+      "erp": 0.4764,
+      "bondYield10Y": 1.7658
     }
   ]
 }
