@@ -1,30 +1,22 @@
 {
-  "updatedAt": "2026-08-18T08:24:57.000423",
+  "updatedAt": "2026-08-19T08:25:42.367003",
   "indexName": "万得全A",
   "summary": {
-    "temperature": 48.88,
-    "pe": 38.9,
-    "pePercentile": 68.98,
+    "temperature": 49.23,
+    "pe": 39.1,
+    "pePercentile": 69.75,
     "pb": 2.74,
-    "pbPercentile": 58.05,
-    "bondYield10Y": 1.6924,
-    "erp": 0.8783,
-    "erpPercentile": 85.26,
-    "tVal": 63.51,
-    "tErp": 14.74
+    "pbPercentile": 58.07,
+    "bondYield10Y": 1.6864,
+    "erp": 0.8711,
+    "erpPercentile": 85.02,
+    "tVal": 63.91,
+    "tErp": 14.98
   },
   "history": [
     {
-      "date": "2026-07-07",
-      "temperature": 47.49,
-      "pe": 39.66,
-      "pb": 2.62,
-      "erp": 0.7808,
-      "bondYield10Y": 1.7406
-    },
-    {
       "date": "2026-07-08",
-      "temperature": 44.69,
+      "temperature": 44.71,
       "pe": 38.76,
       "pb": 2.58,
       "erp": 0.8415,
@@ -32,7 +24,7 @@
     },
     {
       "date": "2026-07-09",
-      "temperature": 44.05,
+      "temperature": 44.06,
       "pe": 38.42,
       "pb": 2.58,
       "erp": 0.8652,
@@ -40,7 +32,7 @@
     },
     {
       "date": "2026-07-10",
-      "temperature": 45.9,
+      "temperature": 45.91,
       "pe": 38.68,
       "pb": 2.62,
       "erp": 0.8455,
@@ -248,11 +240,19 @@
     },
     {
       "date": "2026-08-17",
-      "temperature": 48.88,
+      "temperature": 48.89,
       "pe": 38.9,
       "pb": 2.74,
       "erp": 0.8783,
       "bondYield10Y": 1.6924
+    },
+    {
+      "date": "2026-08-18",
+      "temperature": 49.23,
+      "pe": 39.1,
+      "pb": 2.74,
+      "erp": 0.8711,
+      "bondYield10Y": 1.6864
     }
   ]
 }
