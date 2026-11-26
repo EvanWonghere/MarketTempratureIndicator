@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-25T18:18:11.725607",
+  "updatedAt": "2026-11-26T17:59:52.674166",
   "indexName": "万得全A",
   "summary": {
-    "temperature": 9.24,
-    "pe": 29.9,
+    "temperature": 8.99,
+    "pe": 29.76,
     "pePercentile": 15.28,
-    "pb": 2.09,
-    "pbPercentile": 11.11,
-    "bondYield10Y": 1.5914,
-    "erp": 1.7531,
+    "pb": 2.07,
+    "pbPercentile": 10.42,
+    "bondYield10Y": 1.5912,
+    "erp": 1.769,
     "erpPercentile": 100.0,
-    "tVal": 13.19,
+    "tVal": 12.85,
     "tErp": 0.0
   },
   "history": [
@@ -247,12 +247,12 @@
       "bondYield10Y": 1.65
     },
     {
-      "date": "2026-11-25",
-      "temperature": 9.24,
-      "pe": 29.9,
-      "pb": 2.09,
-      "erp": 1.7531,
-      "bondYield10Y": 1.5914
+      "date": "2026-11-26",
+      "temperature": 8.99,
+      "pe": 29.76,
+      "pb": 2.07,
+      "erp": 1.769,
+      "bondYield10Y": 1.5912
     }
   ]
 }
