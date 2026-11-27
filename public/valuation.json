@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-26T17:59:52.674166",
+  "updatedAt": "2026-11-27T17:45:06.256273",
   "indexName": "万得全A",
   "summary": {
-    "temperature": 8.99,
-    "pe": 29.76,
-    "pePercentile": 15.28,
-    "pb": 2.07,
-    "pbPercentile": 10.42,
-    "bondYield10Y": 1.5912,
-    "erp": 1.769,
+    "temperature": 13.85,
+    "pe": 31.77,
+    "pePercentile": 25.0,
+    "pb": 2.23,
+    "pbPercentile": 14.58,
+    "bondYield10Y": 1.5972,
+    "erp": 1.5504,
     "erpPercentile": 100.0,
-    "tVal": 12.85,
+    "tVal": 19.79,
     "tErp": 0.0
   },
   "history": [
@@ -24,7 +24,7 @@
     },
     {
       "date": "2022-03-31",
-      "temperature": 37.15,
+      "temperature": 36.67,
       "pe": 31.0,
       "pb": 2.66,
       "erp": 0.438,
@@ -32,7 +32,7 @@
     },
     {
       "date": "2022-05-31",
-      "temperature": 25.35,
+      "temperature": 24.86,
       "pe": 30.51,
       "pb": 2.42,
       "erp": 0.535,
@@ -56,7 +56,7 @@
     },
     {
       "date": "2022-10-31",
-      "temperature": 24.93,
+      "temperature": 24.44,
       "pe": 30.87,
       "pb": 2.38,
       "erp": 0.5961,
@@ -247,12 +247,12 @@
       "bondYield10Y": 1.65
     },
     {
-      "date": "2026-11-26",
-      "temperature": 8.99,
-      "pe": 29.76,
-      "pb": 2.07,
-      "erp": 1.769,
-      "bondYield10Y": 1.5912
+      "date": "2026-11-27",
+      "temperature": 13.85,
+      "pe": 31.77,
+      "pb": 2.23,
+      "erp": 1.5504,
+      "bondYield10Y": 1.5972
     }
   ]
 }
